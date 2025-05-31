@@ -65,11 +65,11 @@ st.markdown("""
         border: 2px solid #ff00ff;
     }
     h1 {
-        color: #00d4ff;
+        color: #ffffff;
         text-align: center;
-        font-size: 50px;
+        font-size: 60px;
         margin-bottom: 20px;
-        text-shadow: 0 0 10px #00d4ff, 0 0 20px #ff00ff;
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff;
     }
     </style>
 """, unsafe_allow_html=True)
