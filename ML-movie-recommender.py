@@ -2,6 +2,11 @@ import streamlit as st
 import pickle
 import pandas as pd
 import requests
+import os
+
+from dotenv import load_dotenv
+load_dotenv()
+TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 
 # Set page configuration for a wider layout and custom theme
 st.set_page_config(page_title="🎮 Movie Recommender", layout="wide", initial_sidebar_state="expanded")
@@ -103,7 +108,7 @@ except FileNotFoundError:
 # Function to fetch movie posters, genres, and ratings with error handling
 def fetch_movie_details(movie_id):
     try:
-        response = requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}?api_key=be6d131c8614530bac381041bc2159d6&language=en-US')
+        response = requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}?api_key={TMDB_API_KEY}&language=en-US')
         response.raise_for_status()
         data = response.json()
         if 'poster_path' in data and data['poster_path']:
